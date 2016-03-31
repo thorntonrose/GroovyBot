@@ -1,0 +1,21 @@
+#!/bin/bash
+
+case "$1" in
+   run)
+      lcp=.
+      for f in lib/*.jar; do lcp=$lcp:$f; done
+      [ "$OSTYPE" == "cygwin" ] && lcp=$(cygpath -wp "$lcp")
+      java -cp "$lcp" org.rosesquared.groovybot.Main
+      ;;
+
+   start)
+      echo "not yet implemented"
+      ;;
+      
+   stop)
+      echo "not yet implemented"
+      ;;
+
+   *)
+      echo "Usage: $0 {run|start|stop}"
+esac
