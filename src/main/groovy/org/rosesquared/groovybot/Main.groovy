@@ -13,6 +13,6 @@ class Main {
         slackSession.addMessagePostedListener new MessagePostedListener()
         slackSession.connect()
         log.debug "main: connected"
-        println "Connected."
+        println "connected to ${slackSession.team.name}"
     }
 } 
